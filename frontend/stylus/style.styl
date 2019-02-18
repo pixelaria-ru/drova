@@ -1,0 +1,44 @@
+@import 'inc/reset.styl'
+
+:root
+  --green #98cb01
+.flex
+  display flex
+.f-w__w
+  flex-wrap wrap
+.j-c__s-b
+  justify-content space-between
+.j-c__c
+  justify-content center
+.a-i__c
+  align-items center
+.p__r
+  position relative
+.container
+  max-width 1280px
+  margin auto
+  left 0
+  right 0
+.pd-80
+  padding 0 85px
+.button
+  border-radius 30px
+  padding 19px 46px
+  font-size 18px
+  font-weight 700
+  display inline-block
+  &.button--green
+    background var(--green)
+    color #fff
+  &.button--green-empty
+    border 1px solid
+    color var(--green)
+@import 'inc/header.styl'
+@import 'inc/footer.styl'
+
+@import 'section/initial-screen.styl'
+@import 'section/green-info.styl'
+@import 'section/section-best.styl'
+@import 'section/section-seo.styl'
+@import 'section/section-working.styl'
+@import 'section/section-delivery.styl'

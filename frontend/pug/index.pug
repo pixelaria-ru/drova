@@ -1,0 +1,166 @@
+doctype html
+html(lang='ru')
+  head
+    include inc/head.pug
+    title Главная
+  body 
+    include inc/header.pug
+    main.main 
+      // Первый экран 
+      section.section.section--initial-screen
+        .container 
+          h1 КОЛОТЫЕ ДРОВА И ПОЛЕНЬЯ
+          p Доставкой по Северо-Западному региону и Санкт-Петербургу 
+          a(href='#').button.button--green Заказать дрова сейчас
+      // Зеленая секция 
+      section.section.section--green-info.p__r
+        ul.green-info__list.container.flex.j-c__c
+          li.green-info__item.flex.a-i__c
+            img(src='images/fire.png' alt='')
+            p Преимиум качество
+          li.green-info__item.flex.a-i__c
+            img(src='images/truck.png' alt='')
+            p Доставка в течение 1-2 дней
+          li.green-info__item.flex.a-i__c
+            img(src='images/tag.png' alt='')
+            p Всегда низкие цены
+      // Секция Лучшие сорта 
+      section.section.section--best.container.pd-80
+        h2 Лучшие сорта древесины 
+          span для дома, дачи и бани
+        article.fire-wood
+          .flex.f-w__w.a-i__c
+            img(src='images/drova-1.jpg' alt='').fire-wood__img
+            .fire-wood__info
+              h3 Березовые дрова
+                span от 1500 ₽/м3 
+              p По своим характеристикам чурбаки из березы стоят на втором месте после дуба. Они идеально подходят для отопления жилых помещений, а также для каминов и бани. Полученное тепло сохраняется на протяжении долгого времени. Предлагаем выбрать качественное и недорогое топливо с высокой теплотворной способностью, обеспечивающее создание мягкой, приятной атмосферы, а также дающее приятный аромат. Вы сможете купить дрова березовые с доставкой по цене, лежащей в доступных пределах, прямо на сайте.
+            .fire-wood__order.flex.j-c__s-b.a-i__c
+              ul.fire-wood__list.flex
+                li.fire-wood__item.flex
+                  img(src='images/match-on-fire.png' alt='')
+                  p Просто разжигаются
+                li.fire-wood__item.flex
+                  img(src='images/clock.png' alt='')
+                  p Долго горят
+                li.fire-wood__item.flex
+                  img(src='images/fire-2.png' alt='')
+                  p Быстро разгораются
+                li.fire-wood__item.flex
+                  img(src='images/magic.png' alt='')
+                  p Не стреляют
+              a(href="#").button.button--green-empty Заказать березовые дрова
+        article.fire-wood.fire-wood--right
+          .flex.f-w__w.a-i__c
+            img(src='images/drova-2.jpg' alt='').fire-wood__img
+            .fire-wood__info
+              h3 Осиновые дрова    
+                span от 13500 ₽/м3 
+              p Осина — один из наиболее узнаваемых и распространенных видов деревьев в нашем регионе. В некоторых районах можно встретить целые осиновые рощи. Отчасти именно поэтому люди использовали этот вид дерева в качестве топлива для своих жилищ. 
+              p Осина имеет ствол, как правило, зеленоватого оттенка и может доживать до 90 лет.
+            .fire-wood__order.flex.j-c__s-b.a-i__c
+              ul.fire-wood__list.flex
+                li.fire-wood__item.flex
+                  img(src='images/match-on-fire.png' alt='')
+                  p Просто разжигаются
+                li.fire-wood__item.flex
+                  img(src='images/fire-2.png' alt='')
+                  p Быстро разгораются
+                li.fire-wood__item.flex
+                  img(src='images/fireplace.png' alt='')
+                  p Прочищают дымоход
+                li.fire-wood__item.flex
+                  img(src='images/magic.png' alt='')
+                  p Не стреляют
+              a(href="#").button.button--green-empty Заказать осиновые  дрова
+        article.fire-wood
+          .flex.f-w__w.a-i__c
+            img(src='images/drova-3.jpg' alt='').fire-wood__img
+            .fire-wood__info
+              h3 Дрова из ольхи    
+                span от 13500 ₽/м3 
+              p Древесина ольхи характеризуется специфическим оранжево-коричневым оттенком, хотя в природе насчитывается свыше 30 видов ольхи. Для нашего региона характерны черная и серая ольха. Для использования этого дерева в качестве топлива, мы выбираем материал возрастом от 50 до 80 лет,  т.е. деревья, достигшие своей полной зрелости. 
+            .fire-wood__order.flex.j-c__s-b.a-i__c
+              ul.fire-wood__list.flex
+                li.fire-wood__item.flex
+                  img(src='images/cloud.png' alt='')
+                  p Почти не коптят
+                li.fire-wood__item.flex
+                  img(src='images/nose.png' alt='')
+                  p Приятный аромат
+                li.fire-wood__item.flex
+                  img(src='images/wood.png' alt='')
+                  p Долго хранятся
+              a(href="#").button.button--green-empty Заказать дрова из ольхи
+      // Секция Работаем для вас 
+      section.section.section--working.p__r
+        .container 
+          h2 Работаем для вас с 2014 года
+          ul.working__list.flex.f-w__w.j-c__c
+            li.working__item.flex.a-i__c
+              img(src='' alt='')
+              p Обогрели более 
+                span 1500
+                |домов
+            li.working__item.flex.a-i__c
+              img(src='' alt='')
+              p Доставили 
+                span 12000 м 
+                |дров
+            li.working__item.flex.a-i__c
+              img(src='' alt='')
+              p Заботимся об 
+                span экологии и лесах
+            li.working__item.flex.a-i__c
+              img(src='' alt='')
+              p Всегда держим
+                span низкие цены 
+            li.working__item.flex.a-i__c
+              img(src='' alt='')
+              p Быстрая доставка в течение 
+                span 1-2 дней 
+            li.working__item.flex.a-i__c
+              img(src='' alt='')
+              p Только высокое
+                span качество 
+                |дров
+      // Доставка 
+      section.section.section--delivery.pd-80.container
+        h2 Доставка в течение 1-2 дней 
+          span по всей Ленинградской области
+        .flex.j-c__s-b
+          ul.delivery__list
+            li.delivery__item.flex
+              p Район / Город
+              p Стоимость 
+            li.delivery__item.flex
+              p Волховский район
+              p от 300 ₽ 
+            li.delivery__item.flex
+              p Всеволожский район
+              p от 100 ₽ 
+            li.delivery__item.flex
+              p Киришский район
+              p от 1300 ₽ 
+            li.delivery__item.flex
+              p Кировский район
+              p от 250 ₽ 
+            li.delivery__item.flex
+              p Тосненский район
+              p от 100 ₽ 
+            li.delivery__item.flex
+              p Санкт-Петербург
+              p от 400 ₽ 
+          img(src="images/map.png" alt='')
+        p.footnote.flex.a-i__c Стоимость доставки в другие районы и города рассчитывается индивидуально и зависит от объема заказа 
+      // SEO текст 
+      .section--seo.container.flex.a-i__c
+        img(src='images/seo-img.jpg' alt='картинка для seo')
+        .seo-text
+          p Вязанка дров — это семейный бизнес, основаный в 2014 году. Мы специализируется на производстве и доставке высококачественных дров из разных сортов древесины. Для нас важно предложить нашим клиентам самые высококачественные продукты, быстрое  и дружелюбное обслуживание. Стремление к качеству, надежность и отвественность на всех этапах работы сделали нас одним из ведущих поставщиком дров в Северо-Западном регионе и Петербурге.
+          p Мы имеем собственный транспортный парк и готовы быстро доставить заказ в любой уголок Ленинградской области. 
+      
+        
+        
+    include inc/footer.pug
+            

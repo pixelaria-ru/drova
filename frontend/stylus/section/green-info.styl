@@ -1,0 +1,38 @@
+.section--green-info
+  background var(--green)
+  padding 22px 0 31px
+  margin-bottom 100px
+  &:before
+    content ''
+    position absolute
+    top -50%
+    left 0
+    right 0
+    width 100%
+    height 60px
+    background-image url(../images/top-green.png)
+    background-repeat-y no-repeat
+  &:after
+    content ''
+    position absolute
+    bottom -50%
+    left 0
+    right 0
+    width 100%
+    height 60px
+    background-image url(../images/bottom-green.png)
+    background-repeat-y no-repeat
+.green-info__item
+  margin-right 60px
+  &:last-child
+    margin-right 0
+  img
+    max-width 40px
+    max-height 40px
+    object-fit contain
+    margin-right 10px
+  p
+    color #ffffff
+    font-size 18px
+    font-weight 400
+    white-space nowrap
