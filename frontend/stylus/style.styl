@@ -1,3 +1,4 @@
+@import 'inc/fonts.styl'
 @import 'inc/reset.styl'
 
 :root
@@ -14,6 +15,22 @@
   align-items center
 .p__r
   position relative
+
+.h_b-l
+  position relative
+  &:after
+    content ''
+    position absolute
+    bottom -4px
+    left 0
+    transition .33s
+    width 0%
+    height 1px
+    background #fff
+  &:hover
+    &:after
+      width 100%
+
 .container
   max-width 1280px
   margin auto
@@ -27,12 +44,21 @@
   font-size 18px
   font-weight 700
   display inline-block
+  transition .33s
+  border 1px solid transparent
   &.button--green
     background var(--green)
     color #fff
+    &:hover
+      background 0
+      color var(--green)
+      border 1px solid var(--green)
   &.button--green-empty
-    border 1px solid
     color var(--green)
+    border 1px solid var(--green)
+    &:hover
+      color #fff
+      background var(--green)
 @import 'inc/header.styl'
 @import 'inc/footer.styl'
 
@@ -42,3 +68,4 @@
 @import 'section/section-seo.styl'
 @import 'section/section-working.styl'
 @import 'section/section-delivery.styl'
+@import 'section/section-order.styl'

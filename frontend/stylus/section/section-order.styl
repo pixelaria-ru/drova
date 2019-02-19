@@ -1,0 +1,106 @@
+.section--order
+  padding-bottom 100px
+  .form__order
+    box-shadow 0 0 10px rgba(0, 0, 0, 0.1)
+    background-color #ffffff
+    padding 40px
+    p
+      color var(--green)
+      font-size 22px
+      font-weight 400
+      margin-right 25px
+      white-space nowrap
+  .button
+    font-weight 300
+  input,select
+    box-shadow inset 0 0 10px rgba(0, 0, 0, 0.1)
+    background-color #ffffff
+    color #333333
+    font-size 17px
+    font-weight 400
+    padding 20px 20px 19px
+    &[type='number']
+      width 100%
+      padding-right 5px
+  label
+    position relative
+    &.label__num
+      max-width 110px
+      margin-right 50px
+    &.label__selected
+      margin-right 20px
+      max-width 215px
+      width 100%
+      &:after
+        content ''
+        position absolute
+        right 20px
+        top 0
+        bottom 0
+        margin auto
+        width 20px
+        height 20px
+        transform rotate(0deg)
+        background-image url(../images/arrow.png)
+        background-repeat no-repeat
+        background-position center
+    span
+      position absolute
+      right 0
+      width 30px
+      height 30px
+      cursor pointer
+      &.minus
+        bottom 0
+        background-image url(../images/minus.png)
+        background-repeat no-repeat
+        background-color #f2f2f2
+        background-position center
+        &:hover
+          background-color #e8e8e8
+          background-image url(../images/minus.png)
+          background-repeat no-repeat
+          background-position center
+      &.plus
+        background-image url(../images/plus.png)
+        background-repeat no-repeat
+        background-color #f2f2f2
+        background-position center
+        &:hover
+          background-color #e8e8e8
+          background-image url(../images/plus.png)
+          background-repeat no-repeat
+          background-position center
+  select
+    appearance none
+    width 100%
+    border 0
+    option
+      padding 20px
+
+
+  img
+    max-width 280px
+    max-height 200px
+    object-fit contain
+
+.form__order
+  margin-bottom 30px
+.order__left-side
+  .footnote
+    &:before
+      margin-right 10px
+      width 20px
+      height 20px
+    &:first-child
+      margin-right 25px
+      &:before
+        background-image url(../images/gift.png) no-repeat center
+    &:last-child
+      color #b3b3b3
+      &:before
+        background-image url(../images/credit-card-2.png) no-repeat center
+  p
+    color #98cb01
+    font-size 18px
+    font-weight 300

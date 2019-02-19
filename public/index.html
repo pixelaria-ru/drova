@@ -10,15 +10,15 @@
   <body> 
     <header class="header container pad-80 flex j-c__s-b a-i__c">
       <div class="header__left flex a-i__c">
-        <div class="header__logotype flex a-i__c"><img src="" alt="">
+        <div class="logotype flex a-i__c"><img src="" alt="">
           <h6>Вязанка дров</h6>
         </div>
         <nav class="header__navigation"> 
           <ul class="nav__list flex">
-            <li class="list__item"> <a href="#">Сделать заказ</a></li>
-            <li class="list__item"> <a href="#">Сорта древесины</a></li>
-            <li class="list__item"> <a href="#">О нас</a></li>
-            <li class="list__item"> <a href="#">Доставка</a></li>
+            <li class="list__item"> <a class="h_b-l" href="#">Сделать заказ</a></li>
+            <li class="list__item"> <a class="h_b-l" href="#">Сорта древесины</a></li>
+            <li class="list__item"> <a class="h_b-l" href="#">О нас</a></li>
+            <li class="list__item"> <a class="h_b-l" href="#">Доставка</a></li>
           </ul>
         </nav>
       </div>
@@ -28,8 +28,9 @@
     </header>
     <main class="main"> 
       <!-- Первый экран -->
-      <section class="section section--initial-screen">
-        <div class="container"> 
+      <section class="section section--initial-screen p__r">
+        <video src="images/wallpaper-video.mp4" autoplay loop muted></video>
+        <div class="container p__r"> 
           <h1>КОЛОТЫЕ ДРОВА И ПОЛЕНЬЯ</h1>
           <p>Доставкой по Северо-Западному региону и Санкт-Петербургу </p><a class="button button--green" href="#">Заказать дрова сейчас</a>
         </div>
@@ -47,6 +48,29 @@
             <p>Всегда низкие цены</p>
           </li>
         </ul>
+      </section>
+      <!-- Форма заказа -->
+      <section class="section--order container pd-80 flex j-c__s-b">
+        <div class="order__left-side">
+          <form class="form__order flex a-i__c">
+            <label class="label__selected">
+              <select name="select">
+                <option value="Березовые дрова" data-price="1500">Березовые дрова</option>
+                <option value="Осиновые дрова" data-price="13500">Осиновые дрова</option>
+                <option value="Дрова из ольхи" data-price="13500">Дрова из ольхи</option>
+              </select>
+            </label>
+            <label class="label__num">
+              <input type="number" min="1" value="1" name="num"><span class="plus"></span><span class="minus"></span>
+            </label>
+            <p> <span>1500  </span>₽</p>
+            <button class="button button--green">Заказать</button>
+          </form>
+          <div class="flex">
+            <p class="footnote flex a-i__c">При желании в заказе от 3 м3 щепа и опилки в подарок!</p>
+            <p class="footnote flex a-i__c">Оплата наличными, по карте</p>
+          </div>
+        </div><img src="images/drova-1.jpg" alt="">
       </section>
       <!-- Секция Лучшие сорта -->
       <section class="section section--best container pd-80">
@@ -128,22 +152,22 @@
           <h2>Работаем для вас с 2014 года</h2>
           <ul class="working__list flex f-w__w j-c__c">
             <li class="working__item flex a-i__c"><img src="" alt="">
-              <p>Обогрели более <span>1500</span>домов</p>
+              <p>Обогрели более <span>1500 </span>домов</p>
             </li>
             <li class="working__item flex a-i__c"><img src="" alt="">
-              <p>Доставили <span>12000 м </span>дров</p>
+              <p>Доставили <span>12000 м  </span>дров</p>
             </li>
             <li class="working__item flex a-i__c"><img src="" alt="">
               <p>Заботимся об <span>экологии и лесах</span></p>
             </li>
             <li class="working__item flex a-i__c"><img src="" alt="">
-              <p>Всегда держим<span>низкие цены </span></p>
+              <p>Всегда держим <span>низкие цены </span></p>
             </li>
             <li class="working__item flex a-i__c"><img src="" alt="">
               <p>Быстрая доставка в течение <span>1-2 дней </span></p>
             </li>
             <li class="working__item flex a-i__c"><img src="" alt="">
-              <p>Только высокое<span>качество </span>дров</p>
+              <p>Только высокое <span>качество </span>дров</p>
             </li>
           </ul>
         </div>
@@ -158,11 +182,11 @@
               <p>Стоимость </p>
             </li>
             <li class="delivery__item flex">
-              <p>Волховский район</p>
+              <p>Волховский район </p>
               <p>от 300 ₽ </p>
             </li>
             <li class="delivery__item flex">
-              <p>Всеволожский район</p>
+              <p>Всеволожский район </p>
               <p>от 100 ₽ </p>
             </li>
             <li class="delivery__item flex">
@@ -193,6 +217,32 @@
         </div>
       </div>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="container flex j-c__s-b a-i__c pd-80">
+        <div class="footer__left flex a-i__c">
+          <div class="logotype flex a-i__c"><img src="" alt="">
+            <h6>Вязанка дров</h6>
+          </div>
+          <nav class="footer__navigation"> 
+            <ul class="nav__list flex">
+              <li class="list__item"> <a class="h_b-l" href="#">Сделать заказ</a></li>
+              <li class="list__item"> <a class="h_b-l" href="#">Сорта древесины</a></li>
+              <li class="list__item"> <a class="h_b-l" href="#">О нас</a></li>
+              <li class="list__item"> <a class="h_b-l" href="#">Доставка</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__right flex">
+          <p>Кировск, ул. Дубровская д. 6, с 9-00 по 21-00</p><a href="tel:89219231404"> <span>8 (921) </span>923-14-04</a>
+        </div>
+      </div>
+      <div class="container flex j-c__s-b a-i__c pd-80"> 
+        <div class="footer-bottom__left flex"><a href="#">Политика конфиденциальности </a><a href="#">Пользовательское соглашение</a>
+          <p>2018 год</p>
+        </div>
+        <div class="footer-bottom__right"><a href="#" target="_blank">Разработано в <span>Pixelaria</span></a></div>
+      </div>
+    </footer>
+    <script src="js/lib.min.js"></script>
   </body>
 </html>

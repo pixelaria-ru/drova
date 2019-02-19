@@ -1,11 +1,23 @@
 .section--initial-screen
-  background-image url(../images/main-img.jpg)
-  background-size cover
-  background-repeat no-repeat
-  background-attachment fixed
   padding-top 250px
   padding-bottom 230px
   text-align center
+  &:before
+    content ''
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    background rgba(0,0,0, .6)
+    z-index -1
+  video
+    position absolute
+    left 0
+    top 0
+    right 0
+    bottom 0
+    z-index -2
   h1
     color #ffffff
     font-size 64px

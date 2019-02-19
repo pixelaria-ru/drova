@@ -7,8 +7,9 @@ html(lang='ru')
     include inc/header.pug
     main.main 
       // Первый экран 
-      section.section.section--initial-screen
-        .container 
+      section.section.section--initial-screen.p__r
+        video(src='images/wallpaper-video.mp4' autoplay loop muted)
+        .container.p__r 
           h1 КОЛОТЫЕ ДРОВА И ПОЛЕНЬЯ
           p Доставкой по Северо-Западному региону и Санкт-Петербургу 
           a(href='#').button.button--green Заказать дрова сейчас
@@ -24,6 +25,28 @@ html(lang='ru')
           li.green-info__item.flex.a-i__c
             img(src='images/tag.png' alt='')
             p Всегда низкие цены
+      // Форма заказа 
+      section.section--order.container.pd-80.flex.j-c__s-b
+        
+        .order__left-side
+          form.form__order.flex.a-i__c
+            label.label__selected
+              select(name='select')
+                option(value='Березовые дрова' data-price='1500') Березовые дрова
+                option(value='Осиновые дрова' data-price='13500') Осиновые дрова
+                option(value='Дрова из ольхи' data-price='13500') Дрова из ольхи
+            label.label__num
+              input(type='number' min='1' value='1' name='num')
+              span.plus
+              span.minus
+            p 
+              span 1500  
+              |₽
+            button.button.button--green Заказать
+          .flex
+            p.footnote.flex.a-i__c При желании в заказе от 3 м3 щепа и опилки в подарок!
+            p.footnote.flex.a-i__c Оплата наличными, по карте
+        img(src='images/drova-1.jpg' alt='')
       // Секция Лучшие сорта 
       section.section.section--best.container.pd-80
         h2 Лучшие сорта древесины 
@@ -100,12 +123,12 @@ html(lang='ru')
             li.working__item.flex.a-i__c
               img(src='' alt='')
               p Обогрели более 
-                span 1500
+                span 1500 
                 |домов
             li.working__item.flex.a-i__c
               img(src='' alt='')
               p Доставили 
-                span 12000 м 
+                span 12000 м  
                 |дров
             li.working__item.flex.a-i__c
               img(src='' alt='')
@@ -113,7 +136,7 @@ html(lang='ru')
                 span экологии и лесах
             li.working__item.flex.a-i__c
               img(src='' alt='')
-              p Всегда держим
+              p Всегда держим 
                 span низкие цены 
             li.working__item.flex.a-i__c
               img(src='' alt='')
@@ -121,7 +144,7 @@ html(lang='ru')
                 span 1-2 дней 
             li.working__item.flex.a-i__c
               img(src='' alt='')
-              p Только высокое
+              p Только высокое 
                 span качество 
                 |дров
       // Доставка 
@@ -134,10 +157,10 @@ html(lang='ru')
               p Район / Город
               p Стоимость 
             li.delivery__item.flex
-              p Волховский район
+              p Волховский район 
               p от 300 ₽ 
             li.delivery__item.flex
-              p Всеволожский район
+              p Всеволожский район 
               p от 100 ₽ 
             li.delivery__item.flex
               p Киришский район
