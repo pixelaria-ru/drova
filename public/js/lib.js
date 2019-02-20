@@ -2,7 +2,7 @@
 
 (function () {
   var video = document.getElementsByTagName('video')[0];
-  video.playbackRate = 0.25;
+  video.playbackRate = 0.5;
 })();
 
 (function () {

@@ -125,7 +125,7 @@ suffix: ".min"
 
 // Fonts
 gulp.task('fonts:build', function(){
-return gulp.src('frontend/assets/fonts/*/*')
+return gulp.src('frontend/assets/fonts/PTSans/*')
 .pipe(gulp.dest('public/css'))
 
 });
