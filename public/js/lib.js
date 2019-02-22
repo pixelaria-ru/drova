@@ -54,3 +54,61 @@
     }
   }
 })();
+
+(function () {
+  var label = document.getElementsByClassName('label__selected')[0];
+  var select = label.getElementsByTagName('select')[0];
+  var icon = label.getElementsByClassName('icon')[0];
+  select.addEventListener('click', function (e) {
+    icon.classList.toggle('active');
+  });
+})();
+'use strict';
+
+;
+
+(function (window, document) {
+  'use strict';
+
+  var file = 'svg/sprite.svg',
+      revision = 1;
+  if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
+
+  var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+      request,
+      data,
+      insertIT = function insertIT() {
+    document.body.insertAdjacentHTML('afterbegin', data);
+  },
+      insert = function insert() {
+    if (document.body) insertIT();else document.addEventListener('DOMContentLoaded', insertIT);
+  };
+
+  if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+    data = localStorage.getItem('inlineSVGdata');
+
+    if (data) {
+      insert();
+      return true;
+    }
+  }
+
+  try {
+    request = new XMLHttpRequest();
+    request.open('GET', file, true);
+
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+        data = request.responseText;
+        insert();
+
+        if (isLocalStorage) {
+          localStorage.setItem('inlineSVGdata', data);
+          localStorage.setItem('inlineSVGrev', revision);
+        }
+      }
+    };
+
+    request.send();
+  } catch (e) {}
+})(window, document);

@@ -381,7 +381,7 @@ input[type='submit'] + label
 
     content: '';
 
-    background: rgba(0,0,0,.6);
+    background: rgba(0,0,0,.5);
 }
 
 .section--initial-screen video
@@ -479,15 +479,13 @@ input[type='submit'] + label
     margin-right: 0;
 }
 
-.green-info__item img
+.green-info__item .icon
 {
     max-width: 40px;
     max-height: 40px;
     margin-right: 10px;
 
-    -o-object-fit: contain;
-
-       object-fit: contain;
+    fill: #fff;
 }
 
 .green-info__item p
@@ -585,15 +583,15 @@ input[type='submit'] + label
     margin-right: 0;
 }
 
-.fire-wood__item img
+.fire-wood__item .icon
 {
     max-width: 30px;
     max-height: 30px;
     margin-right: 15px;
 
-    -o-object-fit: contain;
+    fill: #98cb01;
 
-       object-fit: contain;
+    fill: var(--green);
 }
 
 .fire-wood__item p
@@ -866,7 +864,7 @@ input[type='submit'] + label
 
 .section--order
 {
-    padding-bottom: 100px;
+    padding-bottom: 110px;
 }
 
 .section--order .form__order
@@ -882,6 +880,7 @@ input[type='submit'] + label
     font-size: 1.375rem;
     font-weight: 400;
 
+    width: 100px;
     margin-right: 25px;
 
     white-space: nowrap;
@@ -934,7 +933,14 @@ input[type='submit'] + label
     margin-right: 20px;
 }
 
-.section--order label.label__selected:after
+.section--order label.label__selected:hover .icon,
+.section--order label.label__selected:focus .icon
+{
+    fill: #98cb01;
+    fill: var(--green);
+}
+
+.section--order label.label__selected .icon
 {
     position: absolute;
     top: 0;
@@ -945,11 +951,15 @@ input[type='submit'] + label
     height: 20px;
     margin: auto;
 
-    content: '';
+    transition: .33s;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
+}
 
-    background: url('../images/arrow.png') no-repeat center;
+.section--order label.label__selected .icon.active
+{
+    fill: #98cb01;
+    fill: var(--green);
 }
 
 .section--order label span
@@ -989,9 +999,13 @@ input[type='submit'] + label
 
 .section--order select
 {
+    position: relative;
+    z-index: 2;
+
     width: 100%;
 
     border: 0;
+    background: transparent;
 
     -webkit-appearance: none;
 
@@ -1010,6 +1024,10 @@ input[type='submit'] + label
     max-width: 280px;
     max-height: 200px;
 
+    -webkit-transform: scale(1.5);
+
+            transform: scale(1.5);
+
     -o-object-fit: contain;
 
        object-fit: contain;
@@ -1020,7 +1038,7 @@ input[type='submit'] + label
     margin-bottom: 30px;
 }
 
-.order__left-side .footnote:before
+.order__left-side .footnote .icon
 {
     width: 20px;
     height: 20px;
@@ -1032,9 +1050,10 @@ input[type='submit'] + label
     margin-right: 25px;
 }
 
-.order__left-side .footnote:first-child:before
+.order__left-side .footnote:first-child .icon
 {
-    background: url('../images/gift.png') no-repeat center;
+    fill: #98cb01;
+    fill: var(--green);
 }
 
 .order__left-side .footnote:last-child
@@ -1042,9 +1061,9 @@ input[type='submit'] + label
     color: #b3b3b3;
 }
 
-.order__left-side .footnote:last-child:before
+.order__left-side .footnote:last-child .icon
 {
-    background: url('../images/credit-card-2.png') no-repeat center;
+    fill: #b3b3b3;
 }
 
 .order__left-side p

@@ -1,5 +1,5 @@
 .section--order
-  padding-bottom 100px
+  padding-bottom 110px
   .form__order
     box-shadow 0 0 10px rgba(0, 0, 0, 0.1)
     background-color #ffffff
@@ -10,6 +10,7 @@
       font-weight 400
       margin-right 25px
       white-space nowrap
+      width 100px
   .button
     font-weight 300
   input,select
@@ -31,8 +32,10 @@
       margin-right 20px
       max-width 215px
       width 100%
-      &:after
-        content ''
+      &:hover
+        .icon
+          fill var(--green)
+      .icon
         position absolute
         right 20px
         top 0
@@ -41,9 +44,9 @@
         width 20px
         height 20px
         transform rotate(0deg)
-        background-image url(../images/arrow.png)
-        background-repeat no-repeat
-        background-position center
+        transition .33s
+        &.active
+          fill var(--green)
     span
       position absolute
       right 0
@@ -75,6 +78,9 @@
     appearance none
     width 100%
     border 0
+    position relative
+    z-index 2
+    background-color transparent
     option
       padding 20px
 
@@ -83,23 +89,26 @@
     max-width 280px
     max-height 200px
     object-fit contain
+    transform scale(1.5)
 
 .form__order
   margin-bottom 30px
 .order__left-side
   .footnote
-    &:before
+    .icon
       margin-right 10px
       width 20px
       height 20px
+
     &:first-child
       margin-right 25px
-      &:before
-        background-image url(../images/gift.png) no-repeat center
+      .icon
+        fill var(--green)
     &:last-child
       color #b3b3b3
-      &:before
-        background-image url(../images/credit-card-2.png) no-repeat center
+      .icon
+        fill #b3b3b3
+
   p
     color #98cb01
     font-size 18px

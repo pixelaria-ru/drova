@@ -17,13 +17,13 @@ html(lang='ru')
       section.section.section--green-info.p__r
         ul.green-info__list.container.flex.j-c__c
           li.green-info__item.flex.a-i__c
-            img(src='images/fire.png' alt='')
+            +icon('fire')
             p Преимиум качество
           li.green-info__item.flex.a-i__c
-            img(src='images/truck.png' alt='')
+            +icon('delivery-truck')
             p Доставка в течение 1-2 дней
           li.green-info__item.flex.a-i__c
-            img(src='images/tag.png' alt='')
+            +icon('tag')
             p Всегда низкие цены
       // Форма заказа 
       section.section--order.container.pd-80.flex.j-c__s-b
@@ -35,6 +35,7 @@ html(lang='ru')
                 option(value='Березовые дрова' data-price='1500') Березовые дрова
                 option(value='Осиновые дрова' data-price='13500') Осиновые дрова
                 option(value='Дрова из ольхи' data-price='13500') Дрова из ольхи
+              +icon('down-arrow')
             label.label__num
               input(type='number' min='1' value='1' name='num')
               span.plus
@@ -44,8 +45,12 @@ html(lang='ru')
               |₽
             button.button.button--green Заказать
           .flex
-            p.footnote.flex.a-i__c При желании в заказе от 3 м3 щепа и опилки в подарок!
-            p.footnote.flex.a-i__c Оплата наличными, по карте
+            p.footnote.flex.a-i__c 
+              +icon('gift')
+              span При желании в заказе от 3 м3 щепа и опилки в подарок!
+            p.footnote.flex.a-i__c 
+              +icon('credit-card')
+              span Оплата наличными, по карте
         img(src='images/drova-1.jpg' alt='')
       // Секция Лучшие сорта 
       section.section.section--best.container.pd-80
@@ -61,16 +66,16 @@ html(lang='ru')
             .fire-wood__order.flex.j-c__s-b.a-i__c
               ul.fire-wood__list.flex
                 li.fire-wood__item.flex
-                  img(src='images/match-on-fire.png' alt='')
+                  +icon('match-on-fire')
                   p Просто разжигаются
                 li.fire-wood__item.flex
-                  img(src='images/clock.png' alt='')
+                  +icon('clock')
                   p Долго горят
                 li.fire-wood__item.flex
-                  img(src='images/fire-2.png' alt='')
+                  +icon('fire-2')
                   p Быстро разгораются
                 li.fire-wood__item.flex
-                  img(src='images/magic.png' alt='')
+                  +icon('magic')
                   p Не стреляют
               a(href="#").button.button--green-empty Заказать березовые дрова
         article.fire-wood.fire-wood--right
@@ -84,16 +89,16 @@ html(lang='ru')
             .fire-wood__order.flex.j-c__s-b.a-i__c
               ul.fire-wood__list.flex
                 li.fire-wood__item.flex
-                  img(src='images/match-on-fire.png' alt='')
+                  +icon('match-on-fire')
                   p Просто разжигаются
                 li.fire-wood__item.flex
-                  img(src='images/fire-2.png' alt='')
+                  +icon('fire-2')
                   p Быстро разгораются
                 li.fire-wood__item.flex
-                  img(src='images/fireplace.png' alt='')
+                  +icon('fireplace')
                   p Прочищают дымоход
                 li.fire-wood__item.flex
-                  img(src='images/magic.png' alt='')
+                  +icon('magic')
                   p Не стреляют
               a(href="#").button.button--green-empty Заказать осиновые  дрова
         article.fire-wood
@@ -106,13 +111,13 @@ html(lang='ru')
             .fire-wood__order.flex.j-c__s-b.a-i__c
               ul.fire-wood__list.flex
                 li.fire-wood__item.flex
-                  img(src='images/cloud.png' alt='')
+                  +icon('mobileme-logo-of-black-cloud')
                   p Почти не коптят
                 li.fire-wood__item.flex
-                  img(src='images/nose.png' alt='')
+                  +icon('wind')
                   p Приятный аромат
                 li.fire-wood__item.flex
-                  img(src='images/wood.png' alt='')
+                  +icon('hourglass')
                   p Долго хранятся
               a(href="#").button.button--green-empty Заказать дрова из ольхи
       // Секция Работаем для вас 
