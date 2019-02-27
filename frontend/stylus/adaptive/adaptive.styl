@@ -105,7 +105,33 @@
     h6
       display none
   .header__navigation
-    display none
+    position: absolute;
+    background: #fff;
+    padding: 50px;
+    display: block;
+    right: 20px
+    top: 100px;
+    border-radius: 4px 0 0 4px
+    opacity 0
+    z-index 9
+    transform scale(0.5)
+    transition .33s
+    transform-origin top right
+    &.active
+      opacity 1
+      z-index -9
+      transform scale(1)
+    .list__item
+      margin-right 0
+      margin-bottom 20px
+      &:first-child
+        display block
+      a
+        color #333
+    .nav__list
+      flex-direction column
+  .header__hamburger
+    display flex
   // Первый экран
   .section--initial-screen
     padding-top 130px

@@ -233,6 +233,17 @@ input[type='submit'] + label
     background: var(--green);
 }
 
+.main
+{
+    transition: .55s;
+}
+
+.main.active
+{
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+}
+
 .header
 {
     position: absolute;
@@ -240,6 +251,75 @@ input[type='submit'] + label
     top: 0;
 
     padding-top: 35px;
+}
+
+.header__hamburger
+{
+    position: absolute;
+    right: 20px;
+
+    display: none;
+    flex-direction: column;
+
+    cursor: pointer;
+}
+
+.header__hamburger.active:after
+{
+    opacity: 0;
+}
+
+.header__hamburger.active span
+{
+    width: 50px;
+
+    -webkit-transform: rotate(45deg) translateY(-7px);
+
+            transform: rotate(45deg) translateY(-7px);
+}
+
+.header__hamburger.active:before
+{
+    -webkit-transform: rotate(-45deg) translateY(7px);
+            transform: rotate(-45deg) translateY(7px);
+}
+
+.header__hamburger span
+{
+    width: 30px;
+    height: 2px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    transition: .33s;
+
+    background: #fff;
+}
+
+.header__hamburger:before
+{
+    display: block;
+
+    width: 50px;
+    height: 2px;
+
+    content: '';
+    transition: .33s;
+
+    background: #fff;
+}
+
+.header__hamburger:after
+{
+    display: block;
+
+    width: 40px;
+    height: 2px;
+
+    content: '';
+    transition: .33s;
+
+    background: #fff;
 }
 
 .header__right p
@@ -1255,7 +1335,63 @@ input[type='submit'] + label
 
     .header__navigation
     {
-        display: none;
+        position: absolute;
+        z-index: 9;
+        top: 100px;
+        right: 20px;
+
+        display: block;
+
+        padding: 50px;
+
+        transition: .33s;
+        -webkit-transform: scale(.5);
+                transform: scale(.5);
+        -webkit-transform-origin: top right;
+                transform-origin: top right;
+
+        opacity: 0;
+        border-radius: 4px 0 0 4px;
+        background: #fff;
+    }
+
+    .header__navigation.active
+    {
+        z-index: -9;
+
+        -webkit-transform: scale(1);
+
+                transform: scale(1);
+
+        opacity: 1;
+    }
+
+    .header__navigation .list__item
+    {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .header__navigation .list__item:first-child
+    {
+        display: block;
+    }
+
+    .header__navigation .list__item a
+    {
+        color: #333;
+    }
+
+    .header__navigation .nav__list
+    {
+        flex-direction: column;
+    }
+
+    .header__hamburger
+    {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
     }
 
     .section--initial-screen

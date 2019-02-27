@@ -3,6 +3,41 @@
   top 0
   padding-top 35px
   z-index 5
+  &__hamburger
+    display none
+    position absolute
+    right 20px
+    flex-direction column
+    cursor pointer
+    &.active
+      &:after
+        opacity 0
+      span
+        transform rotate(45deg) translateY(-7px)
+        width 50px
+      &:before
+        transform rotate(-45deg) translateY(7px)
+    span
+      width 30px
+      height 2px
+      transition .33s
+      background-color #ffffff
+      margin-top 8px
+      margin-bottom 8px
+    &:before
+      content ''
+      transition .33s
+      display block
+      width 50px
+      height 2px
+      background-color #ffffff
+    &:after
+      content ''
+      display block
+      transition .33s
+      width 40px
+      height 2px
+      background-color #ffffff
   &__right
     p
       color #ffffff
