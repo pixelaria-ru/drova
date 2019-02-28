@@ -462,17 +462,23 @@ input[type='submit'] + label
 
     content: '';
 
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.75);
 }
 
 .section--initial-screen video
 {
     position: absolute;
-    z-index: -2;
+    z-index: -3;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+}
+
+.section--initial-screen .container
+{
+    position: relative;
+    z-index: 3;
 }
 
 .section--initial-screen h1
