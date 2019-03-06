@@ -6,6 +6,77 @@
 })();
 
 (function () {
+  var label = document.getElementsByClassName('label__selected')[0];
+  var select = label.getElementsByTagName('select')[0];
+  var icon = label.getElementsByClassName('icon')[0];
+  select.addEventListener('click', function (e) {
+    icon.classList.toggle('active');
+  });
+})();
+"use strict";
+
+(function () {
+  var buttonsOrder = document.getElementsByClassName('button');
+  var formOrder = document.getElementById('form-order');
+
+  var _loop = function _loop(i, max) {
+    buttonsOrder[i].onclick = function (e) {
+      e.preventDefault();
+    };
+
+    if (buttonsOrder[i].href) {
+      buttonsOrder[i].addEventListener('click', function () {
+        formOrder.classList.add('fixed');
+      });
+    } else {
+      buttonsOrder[i].addEventListener('click', function () {
+        formOrder.classList.add('step-two');
+        formOrder.querySelector('.form__order').prepend(formOrder.querySelector('img'));
+        buttonsOrder[i].innerHTML = 'Завершить заказ';
+      });
+    }
+  };
+
+  for (var i = 0, max = buttonsOrder.length; i < max; i += 1) {
+    _loop(i, max);
+  }
+
+  formOrder.querySelector('form').addEventListener('change', function () {
+    if (buttonsOrder[1].innerHTML === 'Завершить заказ') {
+      buttonsOrder[1].addEventListener('click', function () {
+        var xhr = new XMLHttpRequest();
+        var body = 'name=' + encodeURIComponent(formOrder.querySelectorAll('input')[0].value) + '&tel=' + encodeURIComponent(formOrder.querySelectorAll('input')[1].value);
+        console.log(body);
+        xhr.open('POST', 'send.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(body);
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readystate = 4) {
+            console.log('succses');
+            formOrder.classList.remove('fixed');
+            formOrder.classList.remove('step-two');
+            formOrder.appendChild(formOrder.querySelector('img'));
+            buttonsOrder[1].innerHTML = 'Заказать';
+          }
+        };
+      });
+    }
+  });
+  formOrder.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (target.classList.contains('section--order') && target.classList.contains('fixed')) {
+      this.classList.remove('fixed');
+      this.classList.remove('step-two');
+      formOrder.appendChild(formOrder.querySelector('img'));
+      buttonsOrder[1].innerHTML = 'Заказать';
+    }
+  });
+})();
+"use strict";
+
+(function () {
   var selected = document.getElementsByClassName('label__selected')[0];
   var formOrder = document.getElementsByClassName('form__order')[0];
   var sectionOrder = document.getElementsByClassName('section--order')[0];
@@ -14,7 +85,7 @@
   var select = selected.getElementsByTagName('select')[0];
   var options = selected.getElementsByTagName('option');
   var num = document.getElementsByClassName('label__num')[0];
-  var numInput = document.getElementsByTagName('input')[0];
+  var numInput = num.getElementsByTagName('input')[0];
   var numPlus = num.getElementsByClassName('plus')[0];
   var numMinus = num.getElementsByClassName('minus')[0];
   var i = 1;
@@ -54,15 +125,7 @@
     }
   }
 })();
-
-(function () {
-  var label = document.getElementsByClassName('label__selected')[0];
-  var select = label.getElementsByTagName('select')[0];
-  var icon = label.getElementsByClassName('icon')[0];
-  select.addEventListener('click', function (e) {
-    icon.classList.toggle('active');
-  });
-})();
+"use strict";
 
 (function () {
   var hamburger = document.getElementsByClassName('header__hamburger')[0];

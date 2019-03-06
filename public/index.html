@@ -5,14 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Главная</title>
+    <title>ПроДрова</title>
   </head>
   <body> 
     <header class="header container pd-80 flex j-c__s-b a-i__c">
       <div class="header__left flex a-i__c">
-        <div class="logotype flex a-i__c"><img src="" alt="">
-          <h6>Вязанка дров</h6>
-        </div>
+        <div class="logotype flex a-i__c"><img src="images/logo.png" alt="ПроДрова" title="ПроДрова"></div>
         <nav class="header__navigation"> 
           <ul class="nav__list flex">
             <li class="list__item"> <a class="h_b-l" href="#">Сделать заказ</a></li>
@@ -33,7 +31,7 @@
         <video src="images/wallpaper-video.mp4" autoplay loop muted></video>
         <div class="container p__r"> 
           <h1>КОЛОТЫЕ ДРОВА <span>И ПОЛЕНЬЯ</span></h1>
-          <p>С доставкой по Северо-Западному региону <span>и Санкт-Петербургу </span></p><a class="button button--green" href="#">Заказать дрова сейчас</a>
+          <p>С доставкой по Северо-Западному региону <span>и Санкт-Петербургу </span></p><a class="button button--green" href="#form-order">Заказать дрова сейчас</a>
         </div>
       </section>
       <!-- Зеленая секция -->
@@ -49,7 +47,7 @@
                 <svg class="icon icon-delivery-truck ">
                   <use xlink:href="#icon-delivery-truck"></use>
                 </svg>
-            <p>Доставка в течение 1-2 дней</p>
+            <p>Доставка во все районы - от 700 р</p>
           </li>
           <li class="green-info__item flex a-i__c">
                 <svg class="icon icon-tag ">
@@ -60,24 +58,32 @@
         </ul>
       </section>
       <!-- Форма заказа -->
-      <section class="section--order container pd-80 flex j-c__s-b">
+      <section class="section--order container pd-80 flex j-c__s-b" id="form-order">
         <div class="order__left-side">
-          <form class="form__order flex a-i__c">
-            <label class="label__selected">
-              <select name="select">
-                <option value="Березовые дрова" data-price="1500">Березовые дрова</option>
-                <option value="Осиновые дрова" data-price="13500">Осиновые дрова</option>
-                <option value="Дрова из ольхи" data-price="13500">Дрова из ольхи</option>
-              </select>
-                  <svg class="icon icon-down-arrow ">
-                    <use xlink:href="#icon-down-arrow"></use>
-                  </svg>
-            </label>
-            <label class="label__num">
-              <input type="number" min="1" value="1" name="num"><span class="plus"></span><span class="minus"></span>
-            </label>
-            <p> <span>1500  </span>₽</p>
-            <button class="button button--green">Заказать</button>
+          <form class="form__order" method="post">
+            <h2>Оформление заказа</h2>
+            <div class="input-contacts">
+              <input type="text" name="name" placeholder="Имя">
+              <input type="text" name="tel" placeholder="Телефон">
+              <input type="text" name="email" placeholder="емайл ">
+            </div>
+            <div class="flex a-i__c">
+              <label class="label__selected">
+                <select name="select">
+                  <option value="Березовые дрова" data-price="1500">Березовые дрова</option>
+                  <option value="Осиновые дрова" data-price="1350">Осиновые дрова</option>
+                  <option value="Дрова из ольхи" data-price="13500">Дрова из ольхи</option>
+                </select>
+                    <svg class="icon icon-down-arrow ">
+                      <use xlink:href="#icon-down-arrow"></use>
+                    </svg>
+              </label>
+              <label class="label__num">
+                <input type="number" min="1" value="1" name="num"><span class="plus"></span><span class="minus"></span>
+              </label>
+              <p> <span>1500  </span>₽</p>
+              <button class="button button--green">Заказать</button>
+            </div>
           </form>
           <div class="flex">
             <p class="footnote flex a-i__c"> 
@@ -100,7 +106,7 @@
           <div class="flex f-w__w a-i__c"><img class="fire-wood__img" src="images/drova-1.jpg" alt="">
             <div class="fire-wood__info">
               <h3>Березовые дрова<span>от 1500 ₽/м3 </span></h3>
-              <p>По своим характеристикам чурбаки из березы стоят на втором месте после дуба. Они идеально подходят для отопления жилых помещений, а также для каминов и бани. Полученное тепло сохраняется на протяжении долгого времени. Предлагаем выбрать качественное и недорогое топливо с высокой теплотворной способностью, обеспечивающее создание мягкой, приятной атмосферы, а также дающее приятный аромат. Вы сможете купить дрова березовые с доставкой по цене, лежащей в доступных пределах, прямо на сайте.</p>
+              <p>Дрова из березы идеально подходят для обогрева дома, дачи, растопке камина или бани. Полученное тепло сберегается в течение длительного времени. Береза принесет в дом уют, создаст приятную атмосфер. Закажите качественные дрова с высокой теплотворной способностью. При необходимости, мы нарежем дрова по длине, подходящей именно вашей печи.</p>
             </div>
             <div class="fire-wood__order flex j-c__s-b a-i__c">
               <ul class="fire-wood__list flex">
@@ -128,16 +134,15 @@
                       </svg>
                   <p>Не стреляют</p>
                 </li>
-              </ul><a class="button button--green-empty" href="#">Заказать <span>березовые дрова</span></a>
+              </ul><a class="button button--green-empty" href="#form-order">Заказать <span>березовые дрова</span></a>
             </div>
           </div>
         </article>
         <article class="fire-wood fire-wood--right">
           <div class="flex f-w__w a-i__c"><img class="fire-wood__img" src="images/drova-2.jpg" alt="">
             <div class="fire-wood__info">
-              <h3>Осиновые дрова    <span>от 13500 ₽/м3 </span></h3>
-              <p>Осина — один из наиболее узнаваемых и распространенных видов деревьев в нашем регионе. В некоторых районах можно встретить целые осиновые рощи. Отчасти именно поэтому люди использовали этот вид дерева в качестве топлива для своих жилищ. </p>
-              <p>Осина имеет ствол, как правило, зеленоватого оттенка и может доживать до 90 лет.</p>
+              <h3>Осиновые дрова    <span>от 1350 ₽/м3 </span></h3>
+              <p>Осина — один из наиболее распространенных видов деревьев в нашей области. Самым ценным свойством дров из осины является их способность очищать дымоход от отложений сажи. Осиновый жар разрыхляет остатки копоти на стенках, заставляя её осыпаться в зольный отсек. Жар таких дров обладает полезными свойствами, способствует профилактике вирусных заболеваний, стимулируя иммунную систему человека. Дрова из осины можно хранить до трёх лет без потери полезных и ароматических свойств. Большинство пород древесины хранится лишь два года. </p>
             </div>
             <div class="fire-wood__order flex j-c__s-b a-i__c">
               <ul class="fire-wood__list flex">
@@ -165,15 +170,15 @@
                       </svg>
                   <p>Не стреляют</p>
                 </li>
-              </ul><a class="button button--green-empty" href="#">Заказать <span>осиновые  дрова</span></a>
+              </ul><a class="button button--green-empty" href="#form-order">Заказать <span>осиновые  дрова</span></a>
             </div>
           </div>
         </article>
         <article class="fire-wood">
           <div class="flex f-w__w a-i__c"><img class="fire-wood__img" src="images/drova-3.jpg" alt="">
             <div class="fire-wood__info">
-              <h3>Дрова из ольхи    <span>от 13500 ₽/м3 </span></h3>
-              <p>Древесина ольхи характеризуется специфическим оранжево-коричневым оттенком, хотя в природе насчитывается свыше 30 видов ольхи. Для нашего региона характерны черная и серая ольха. Для использования этого дерева в качестве топлива, мы выбираем материал возрастом от 50 до 80 лет,  т.е. деревья, достигшие своей полной зрелости. </p>
+              <h3>Дрова из ольхи    <span>от 1350 ₽/м3 </span></h3>
+              <p>Дрова из ольхи не зря называют царскими дровами. При горении эта древесина выделяет полезные для организма человека эфирные масла, поэтому они так приятно пахнут. Ольховые дрова воспламеняются и горят дольше других видов, это самые жаркие поленья. От ольхи не бывает едкого дыма и копоти, дрова не трещат, быстро разгораются, горят с зеленоватым оттенком пламени.</p>
             </div>
             <div class="fire-wood__order flex j-c__s-b a-i__c">
               <ul class="fire-wood__list flex">
@@ -195,7 +200,7 @@
                       </svg>
                   <p>Долго хранятся</p>
                 </li>
-              </ul><a class="button button--green-empty" href="#">Заказать <span>дрова из ольхи</span></a>
+              </ul><a class="button button--green-empty" href="#form-order">Заказать <span>дрова из ольхи</span></a>
             </div>
           </div>
         </article>
@@ -203,24 +208,24 @@
       <!-- Секция Работаем для вас -->
       <section class="section section--working p__r">
         <div class="container"> 
-          <h2>Работаем для вас с 2014 года</h2>
+          <h2>Работаем для вас с 2012 года</h2>
           <ul class="working__list flex f-w__w j-c__c">
-            <li class="working__item flex a-i__c"><img src="" alt="">
-              <p>Обогрели более <span>1500 </span>домов</p>
+            <li class="working__item flex a-i__c"><img src="images/Group 27.png" alt="">
+              <p>Обогрели более <span>7500</span>домов</p>
             </li>
-            <li class="working__item flex a-i__c"><img src="" alt="">
+            <li class="working__item flex a-i__c"><img src="images/Group 26.png" alt="">
               <p>Доставили <span>12000 м  </span>дров</p>
             </li>
-            <li class="working__item flex a-i__c"><img src="" alt="">
+            <li class="working__item flex a-i__c"><img src="images/Group 7.png" alt="">
               <p>Заботимся об <span>экологии и лесах</span></p>
             </li>
-            <li class="working__item flex a-i__c"><img src="" alt="">
+            <li class="working__item flex a-i__c"><img src="images/Group 28.png" alt="">
               <p>Всегда держим <span>низкие цены </span></p>
             </li>
-            <li class="working__item flex a-i__c"><img src="" alt="">
+            <li class="working__item flex a-i__c"><img src="images/Group 25.png" alt="">
               <p>Быстрая доставка в течение <span>1-2 дней </span></p>
             </li>
-            <li class="working__item flex a-i__c"><img src="" alt="">
+            <li class="working__item flex a-i__c"><img src="images/Group 24.png" alt="">
               <p>Только высокое <span>качество </span>дров</p>
             </li>
           </ul>
@@ -261,7 +266,7 @@
             </li>
           </ul><img src="images/map.png" alt="">
         </div>
-        <p class="footnote flex a-i__c"> <span>Стоимость доставки в другие районы и города рассчитывается индивидуально и зависит от объема заказа </span></p>
+        <p class="footnote flex a-i__c"> <span>Стоимость доставки, в т.ч. в другие районы, рассчитывается индивидуально, зависит от объема заказа и местоположения объекта</span></p>
       </section>
       <!-- SEO текст -->
       <div class="section--seo container flex a-i__c"><img src="images/seo-img.png" alt="картинка для seo">
@@ -274,9 +279,7 @@
     <footer class="footer">
       <div class="container flex j-c__s-b a-i__c pd-80">
         <div class="footer__left flex a-i__c">
-          <div class="logotype flex a-i__c"><img src="" alt="">
-            <h6>Вязанка дров</h6>
-          </div>
+          <div class="logotype flex a-i__c"><img src="images/logo.png" alt="ПроДрова" title="ПроДрова"></div>
           <nav class="footer__navigation"> 
             <ul class="nav__list flex">
               <li class="list__item"> <a class="h_b-l" href="#">Сделать заказ</a></li>
@@ -292,7 +295,7 @@
       </div>
       <div class="container flex j-c__s-b a-i__c pd-80"> 
         <div class="footer-bottom__left flex"><a href="#">Политика конфиденциальности </a><a href="#">Пользовательское соглашение</a>
-          <p>2018 год</p>
+          <p>2012 год</p>
         </div>
         <div class="footer-bottom__right"><a href="#" target="_blank">Разработано в <span>Pixelaria</span></a></div>
       </div>

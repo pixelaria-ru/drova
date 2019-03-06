@@ -2,7 +2,7 @@ doctype html
 html(lang='ru')
   head
     include inc/head.pug
-    title Главная
+    title ПроДрова
   body 
     include inc/header.pug
     main.main 
@@ -14,7 +14,7 @@ html(lang='ru')
             span И ПОЛЕНЬЯ
           p С доставкой по Северо-Западному региону 
             span и Санкт-Петербургу 
-          a(href='#').button.button--green Заказать дрова сейчас
+          a(href='#form-order').button.button--green Заказать дрова сейчас
       // Зеленая секция 
       section.section.section--green-info.p__r
         ul.green-info__list.container.flex.j-c__c
@@ -23,29 +23,36 @@ html(lang='ru')
             p Преимиум качество
           li.green-info__item.flex.a-i__c
             +icon('delivery-truck')
-            p Доставка в течение 1-2 дней
+            p Доставка во все районы - от 700 р
           li.green-info__item.flex.a-i__c
             +icon('tag')
             p Всегда низкие цены
       // Форма заказа 
-      section.section--order.container.pd-80.flex.j-c__s-b
+      section.section--order.container.pd-80.flex.j-c__s-b#form-order
         
         .order__left-side
-          form.form__order.flex.a-i__c
-            label.label__selected
-              select(name='select')
-                option(value='Березовые дрова' data-price='1500') Березовые дрова
-                option(value='Осиновые дрова' data-price='13500') Осиновые дрова
-                option(value='Дрова из ольхи' data-price='13500') Дрова из ольхи
-              +icon('down-arrow')
-            label.label__num
-              input(type='number' min='1' value='1' name='num')
-              span.plus
-              span.minus
-            p 
-              span 1500  
-              |₽
-            button.button.button--green Заказать
+          form.form__order(method='post')
+            h2 Оформление заказа
+            .input-contacts
+              input(type='text' name='name' placeholder='Имя')
+              input(type='text' name='tel' placeholder='Телефон')
+              input(type='text' name='email' placeholder='емайл ')
+            .flex.a-i__c
+              label.label__selected
+                select(name='select')
+                  option(value='Березовые дрова' data-price='1500') Березовые дрова
+                  option(value='Осиновые дрова' data-price='1350') Осиновые дрова
+                  option(value='Дрова из ольхи' data-price='13500') Дрова из ольхи
+                +icon('down-arrow')
+              label.label__num
+                input(type='number' min='1' value='1' name='num')
+                span.plus
+                span.minus
+              
+              p 
+                span 1500  
+                |₽
+              button.button.button--green Заказать
           .flex
             p.footnote.flex.a-i__c 
               +icon('gift')
@@ -64,7 +71,7 @@ html(lang='ru')
             .fire-wood__info
               h3 Березовые дрова
                 span от 1500 ₽/м3 
-              p По своим характеристикам чурбаки из березы стоят на втором месте после дуба. Они идеально подходят для отопления жилых помещений, а также для каминов и бани. Полученное тепло сохраняется на протяжении долгого времени. Предлагаем выбрать качественное и недорогое топливо с высокой теплотворной способностью, обеспечивающее создание мягкой, приятной атмосферы, а также дающее приятный аромат. Вы сможете купить дрова березовые с доставкой по цене, лежащей в доступных пределах, прямо на сайте.
+              p Дрова из березы идеально подходят для обогрева дома, дачи, растопке камина или бани. Полученное тепло сберегается в течение длительного времени. Береза принесет в дом уют, создаст приятную атмосфер. Закажите качественные дрова с высокой теплотворной способностью. При необходимости, мы нарежем дрова по длине, подходящей именно вашей печи.
             .fire-wood__order.flex.j-c__s-b.a-i__c
               ul.fire-wood__list.flex
                 li.fire-wood__item.flex
@@ -79,16 +86,15 @@ html(lang='ru')
                 li.fire-wood__item.flex
                   +icon('magic')
                   p Не стреляют
-              a(href="#").button.button--green-empty Заказать 
+              a(href="#form-order").button.button--green-empty Заказать 
                 span березовые дрова
         article.fire-wood.fire-wood--right
           .flex.f-w__w.a-i__c
             img(src='images/drova-2.jpg' alt='').fire-wood__img
             .fire-wood__info
               h3 Осиновые дрова    
-                span от 13500 ₽/м3 
-              p Осина — один из наиболее узнаваемых и распространенных видов деревьев в нашем регионе. В некоторых районах можно встретить целые осиновые рощи. Отчасти именно поэтому люди использовали этот вид дерева в качестве топлива для своих жилищ. 
-              p Осина имеет ствол, как правило, зеленоватого оттенка и может доживать до 90 лет.
+                span от 1350 ₽/м3 
+              p Осина — один из наиболее распространенных видов деревьев в нашей области. Самым ценным свойством дров из осины является их способность очищать дымоход от отложений сажи. Осиновый жар разрыхляет остатки копоти на стенках, заставляя её осыпаться в зольный отсек. Жар таких дров обладает полезными свойствами, способствует профилактике вирусных заболеваний, стимулируя иммунную систему человека. Дрова из осины можно хранить до трёх лет без потери полезных и ароматических свойств. Большинство пород древесины хранится лишь два года. 
             .fire-wood__order.flex.j-c__s-b.a-i__c
               ul.fire-wood__list.flex
                 li.fire-wood__item.flex
@@ -103,15 +109,15 @@ html(lang='ru')
                 li.fire-wood__item.flex
                   +icon('magic')
                   p Не стреляют
-              a(href="#").button.button--green-empty Заказать 
+              a(href="#form-order").button.button--green-empty Заказать 
                 span осиновые  дрова
         article.fire-wood
           .flex.f-w__w.a-i__c
             img(src='images/drova-3.jpg' alt='').fire-wood__img
             .fire-wood__info
               h3 Дрова из ольхи    
-                span от 13500 ₽/м3 
-              p Древесина ольхи характеризуется специфическим оранжево-коричневым оттенком, хотя в природе насчитывается свыше 30 видов ольхи. Для нашего региона характерны черная и серая ольха. Для использования этого дерева в качестве топлива, мы выбираем материал возрастом от 50 до 80 лет,  т.е. деревья, достигшие своей полной зрелости. 
+                span от 1350 ₽/м3 
+              p Дрова из ольхи не зря называют царскими дровами. При горении эта древесина выделяет полезные для организма человека эфирные масла, поэтому они так приятно пахнут. Ольховые дрова воспламеняются и горят дольше других видов, это самые жаркие поленья. От ольхи не бывает едкого дыма и копоти, дрова не трещат, быстро разгораются, горят с зеленоватым оттенком пламени.
             .fire-wood__order.flex.j-c__s-b.a-i__c
               ul.fire-wood__list.flex
                 li.fire-wood__item.flex
@@ -123,37 +129,37 @@ html(lang='ru')
                 li.fire-wood__item.flex
                   +icon('hourglass')
                   p Долго хранятся
-              a(href="#").button.button--green-empty Заказать 
+              a(href="#form-order").button.button--green-empty Заказать 
                 span дрова из ольхи
       // Секция Работаем для вас 
       section.section.section--working.p__r
         .container 
-          h2 Работаем для вас с 2014 года
+          h2 Работаем для вас с 2012 года
           ul.working__list.flex.f-w__w.j-c__c
             li.working__item.flex.a-i__c
-              img(src='' alt='')
+              img(src='images/Group 27.png' alt='')
               p Обогрели более 
-                span 1500 
+                span 7500
                 |домов
             li.working__item.flex.a-i__c
-              img(src='' alt='')
+              img(src='images/Group 26.png' alt='')
               p Доставили 
                 span 12000 м  
                 |дров
             li.working__item.flex.a-i__c
-              img(src='' alt='')
+              img(src='images/Group 7.png' alt='')
               p Заботимся об 
                 span экологии и лесах
             li.working__item.flex.a-i__c
-              img(src='' alt='')
+              img(src='images/Group 28.png' alt='')
               p Всегда держим 
                 span низкие цены 
             li.working__item.flex.a-i__c
-              img(src='' alt='')
+              img(src='images/Group 25.png' alt='')
               p Быстрая доставка в течение 
                 span 1-2 дней 
             li.working__item.flex.a-i__c
-              img(src='' alt='')
+              img(src='images/Group 24.png' alt='')
               p Только высокое 
                 span качество 
                 |дров
@@ -186,7 +192,8 @@ html(lang='ru')
               p от 400 ₽ 
           img(src="images/map.png" alt='')
         p.footnote.flex.a-i__c 
-          span Стоимость доставки в другие районы и города рассчитывается индивидуально и зависит от объема заказа 
+          span Стоимость доставки, в т.ч. в другие районы, рассчитывается индивидуально, зависит от объема заказа и местоположения объекта
+
       // SEO текст 
       .section--seo.container.flex.a-i__c
         img(src='images/seo-img.png' alt='картинка для seo')
