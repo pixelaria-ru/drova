@@ -13,10 +13,10 @@
         <div class="logotype flex a-i__c"><img src="images/logo.png" alt="ПроДрова" title="ПроДрова"></div>
         <nav class="header__navigation"> 
           <ul class="nav__list flex">
-            <li class="list__item"> <a class="h_b-l" href="#">Сделать заказ</a></li>
-            <li class="list__item"> <a class="h_b-l" href="#">Сорта древесины</a></li>
-            <li class="list__item"> <a class="h_b-l" href="#">О нас</a></li>
-            <li class="list__item"> <a class="h_b-l" href="#">Доставка</a></li>
+            <li class="list__item"> <a class="h_b-l" href="#form-order">Сделать заказ</a></li>
+            <li class="list__item"> <a class="h_b-l" href="#s-2">Сорта древесины</a></li>
+            <li class="list__item"> <a class="h_b-l" href="#s-3">Доставка</a></li>
+            <li class="list__item"> <a class="h_b-l" href="#s-4">О нас</a></li>
           </ul>
         </nav>
       </div>
@@ -47,7 +47,7 @@
                 <svg class="icon icon-delivery-truck ">
                   <use xlink:href="#icon-delivery-truck"></use>
                 </svg>
-            <p>Доставка во все районы - от 700 р</p>
+            <p>Доставка во все районы - от 700 ₽</p>
           </li>
           <li class="green-info__item flex a-i__c">
                 <svg class="icon icon-tag ">
@@ -72,16 +72,17 @@
                 <select name="select">
                   <option value="Березовые дрова" data-price="1500">Березовые дрова</option>
                   <option value="Осиновые дрова" data-price="1350">Осиновые дрова</option>
-                  <option value="Дрова из ольхи" data-price="13500">Дрова из ольхи</option>
+                  <option value="Дрова из ольхи" data-price="1350">Дрова из ольхи</option>
+                  <option value="Смесь" data-price="0">Смесь</option>
                 </select>
                     <svg class="icon icon-down-arrow ">
                       <use xlink:href="#icon-down-arrow"></use>
                     </svg>
               </label>
               <label class="label__num">
-                <input type="number" min="1" value="1" name="num"><span class="plus"></span><span class="minus"></span>
+                <input type="number" min="1" value="1" name="num"><span class="plus"></span><span class="minus"></span><span class="metrcube">м<sup>3 </sup></span>
               </label>
-              <p> <span>1500  </span>₽</p>
+              <p> <span>1500  </span><span> ₽</span></p>
               <button class="button button--green">Заказать</button>
             </div>
           </form>
@@ -100,12 +101,13 @@
         </div><img src="images/drova-1.jpg" alt="">
       </section>
       <!-- Секция Лучшие сорта -->
-      <section class="section section--best container pd-80">
+      <section class="section section--best container pd-80" id="s-2">
         <h2>Лучшие сорта древесины <span>для дома, дачи и бани</span></h2>
         <article class="fire-wood">
           <div class="flex f-w__w a-i__c"><img class="fire-wood__img" src="images/drova-1.jpg" alt="">
-            <div class="fire-wood__info">
-              <h3>Березовые дрова<span>от 1500 ₽/м3 </span></h3>
+            <div class="fire-wood__info"><span class="sale-block">Акция!</span>
+              <h3>Березовые дрова<span class="sale"> 
+                  <s>от 1800 ₽/м<sup>3 </sup></s></span><span>от 1500 ₽/м<sup>3 </sup></span></h3>
               <p>Дрова из березы идеально подходят для обогрева дома, дачи, растопке камина или бани. Полученное тепло сберегается в течение длительного времени. Береза принесет в дом уют, создаст приятную атмосфер. Закажите качественные дрова с высокой теплотворной способностью. При необходимости, мы нарежем дрова по длине, подходящей именно вашей печи.</p>
             </div>
             <div class="fire-wood__order flex j-c__s-b a-i__c">
@@ -141,7 +143,7 @@
         <article class="fire-wood fire-wood--right">
           <div class="flex f-w__w a-i__c"><img class="fire-wood__img" src="images/drova-2.jpg" alt="">
             <div class="fire-wood__info">
-              <h3>Осиновые дрова    <span>от 1350 ₽/м3 </span></h3>
+              <h3>Осиновые дрова    <span>от 1350 ₽/м<sup>3 </sup></span></h3>
               <p>Осина — один из наиболее распространенных видов деревьев в нашей области. Самым ценным свойством дров из осины является их способность очищать дымоход от отложений сажи. Осиновый жар разрыхляет остатки копоти на стенках, заставляя её осыпаться в зольный отсек. Жар таких дров обладает полезными свойствами, способствует профилактике вирусных заболеваний, стимулируя иммунную систему человека. Дрова из осины можно хранить до трёх лет без потери полезных и ароматических свойств. Большинство пород древесины хранится лишь два года. </p>
             </div>
             <div class="fire-wood__order flex j-c__s-b a-i__c">
@@ -177,7 +179,7 @@
         <article class="fire-wood">
           <div class="flex f-w__w a-i__c"><img class="fire-wood__img" src="images/drova-3.jpg" alt="">
             <div class="fire-wood__info">
-              <h3>Дрова из ольхи    <span>от 1350 ₽/м3 </span></h3>
+              <h3>Дрова из ольхи    <span>от 1350 ₽/м<sup>3 </sup></span></h3>
               <p>Дрова из ольхи не зря называют царскими дровами. При горении эта древесина выделяет полезные для организма человека эфирные масла, поэтому они так приятно пахнут. Ольховые дрова воспламеняются и горят дольше других видов, это самые жаркие поленья. От ольхи не бывает едкого дыма и копоти, дрова не трещат, быстро разгораются, горят с зеленоватым оттенком пламени.</p>
             </div>
             <div class="fire-wood__order flex j-c__s-b a-i__c">
@@ -232,7 +234,7 @@
         </div>
       </section>
       <!-- Доставка -->
-      <section class="section section--delivery pd-80 container">
+      <section class="section section--delivery pd-80 container" id="s-3">
         <h2>Доставка в течение 1-2 дней <span>по всей Ленинградской области</span></h2>
         <div class="flex j-c__s-b">
           <ul class="delivery__list">
@@ -242,36 +244,36 @@
             </li>
             <li class="delivery__item flex">
               <p>Волховский район </p>
-              <p>от 300 ₽ </p>
+              <p>от 700 ₽ </p>
             </li>
             <li class="delivery__item flex">
               <p>Всеволожский район </p>
-              <p>от 100 ₽ </p>
+              <p>от 700 ₽ </p>
             </li>
             <li class="delivery__item flex">
               <p>Киришский район</p>
-              <p>от 1300 ₽ </p>
+              <p>от 700 ₽ </p>
             </li>
             <li class="delivery__item flex">
               <p>Кировский район</p>
-              <p>от 250 ₽ </p>
+              <p>от 700 ₽ </p>
             </li>
             <li class="delivery__item flex">
               <p>Тосненский район</p>
-              <p>от 100 ₽ </p>
+              <p>от 700 ₽ </p>
             </li>
             <li class="delivery__item flex">
               <p>Санкт-Петербург</p>
-              <p>от 400 ₽ </p>
+              <p>от 700 ₽ </p>
             </li>
           </ul><img src="images/map.png" alt="">
         </div>
         <p class="footnote flex a-i__c"> <span>Стоимость доставки, в т.ч. в другие районы, рассчитывается индивидуально, зависит от объема заказа и местоположения объекта</span></p>
       </section>
       <!-- SEO текст -->
-      <div class="section--seo container flex a-i__c"><img src="images/seo-img.png" alt="картинка для seo">
+      <div class="section--seo container flex a-i__c" id="s-4"><img src="images/seo-img.png" alt="картинка для seo">
         <div class="seo-text">
-          <p>Вязанка дров — это семейный бизнес, основаный в 2014 году. Мы специализируется на производстве и доставке высококачественных дров из разных сортов древесины. Для нас важно предложить нашим клиентам самые высококачественные продукты, быстрое  и дружелюбное обслуживание. Стремление к качеству, надежность и отвественность на всех этапах работы сделали нас одним из ведущих поставщиком дров в Северо-Западном регионе и Петербурге.</p>
+          <p>ПроДрова — это семейный бизнес, основаный в 2012 году. Мы специализируется на производстве и доставке высококачественных дров из разных сортов древесины. Для нас важно предложить нашим клиентам самые высококачественные продукты, быстрое  и дружелюбное обслуживание. Стремление к качеству, надежность и отвественность на всех этапах работы сделали нас одним из ведущих поставщиком дров в Северо-Западном регионе и Петербурге.</p>
           <p>Мы имеем собственный транспортный парк и готовы быстро доставить заказ в любой уголок Ленинградской области. </p>
         </div>
       </div>

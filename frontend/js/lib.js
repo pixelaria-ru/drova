@@ -16,3 +16,9 @@
   })
 
 }());
+
+
+
+
+formOrder();
+buttonsForOrder();

@@ -1,4 +1,5 @@
-(function(){
+
+function formOrder(){
     const selected = document.getElementsByClassName('label__selected')[0];
     const formOrder = document.getElementsByClassName('form__order')[0];
     const sectionOrder = document.getElementsByClassName('section--order')[0];
@@ -29,6 +30,7 @@
       searchSelected('data-price')
       for(let i = 0, max = options.length; i < max; i += 1 ){
         if(options[i].selected){
+          formOrder.getElementsByTagName('p')[0].getElementsByTagName('span')[1].style.visibility = 'visible'
           if(options[i].innerHTML === 'Березовые дрова'){
             sectionOrderImg.src = 'images/drova-1.jpg'
           }
@@ -37,6 +39,11 @@
           }
           else if(options[i].innerHTML === 'Дрова из ольхи'){
             sectionOrderImg.src = 'images/drova-3.jpg'
+          }
+          else if(options[i].innerHTML === 'Смесь'){
+            sectionOrderImg.src = '';
+            formOrder.getElementsByTagName('p')[0].getElementsByTagName('span')[1].style.visibility = 'hidden'
+            price.innerHTML = 'договорная'
           }
         }
       }
@@ -54,4 +61,4 @@
 
 
 
-}());
+}

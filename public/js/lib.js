@@ -13,11 +13,15 @@
     icon.classList.toggle('active');
   });
 })();
+
+formOrder();
+buttonsForOrder();
 "use strict";
 
-(function () {
+function buttonsForOrder() {
   var buttonsOrder = document.getElementsByClassName('button');
   var formOrder = document.getElementById('form-order');
+  var price = formOrder.getElementsByTagName('p')[0].getElementsByTagName('span')[0];
 
   var _loop = function _loop(i, max) {
     buttonsOrder[i].onclick = function (e) {
@@ -45,8 +49,14 @@
     if (buttonsOrder[1].innerHTML === 'Завершить заказ') {
       buttonsOrder[1].addEventListener('click', function () {
         var xhr = new XMLHttpRequest();
-        var body = 'name=' + encodeURIComponent(formOrder.querySelectorAll('input')[0].value) + '&tel=' + encodeURIComponent(formOrder.querySelectorAll('input')[1].value);
-        console.log(body);
+        var masBody = [];
+        masBody[0] = encodeURIComponent(formOrder.querySelectorAll('input')[0].value);
+        masBody[1] = encodeURIComponent(formOrder.querySelectorAll('input')[1].value);
+        masBody[2] = encodeURIComponent(formOrder.querySelectorAll('input')[2].value);
+        masBody[3] = encodeURIComponent(formOrder.querySelectorAll('select')[0].value);
+        masBody[4] = encodeURIComponent(formOrder.querySelectorAll('input')[3].value);
+        masBody[5] = price.innerHTML;
+        var body = 'name=' + masBody[0] + '&tel=' + masBody[1] + '&email=' + masBody[2] + '&select=' + masBody[3] + '&num=' + masBody[4] + '&price=' + masBody[5];
         xhr.open('POST', 'send.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(body);
@@ -73,10 +83,10 @@
       buttonsOrder[1].innerHTML = 'Заказать';
     }
   });
-})();
+}
 "use strict";
 
-(function () {
+function formOrder() {
   var selected = document.getElementsByClassName('label__selected')[0];
   var formOrder = document.getElementsByClassName('form__order')[0];
   var sectionOrder = document.getElementsByClassName('section--order')[0];
@@ -105,12 +115,18 @@
 
     for (var _i = 0, max = options.length; _i < max; _i += 1) {
       if (options[_i].selected) {
+        formOrder.getElementsByTagName('p')[0].getElementsByTagName('span')[1].style.visibility = 'visible';
+
         if (options[_i].innerHTML === 'Березовые дрова') {
           sectionOrderImg.src = 'images/drova-1.jpg';
         } else if (options[_i].innerHTML === 'Осиновые дрова') {
           sectionOrderImg.src = 'images/drova-2.jpg';
         } else if (options[_i].innerHTML === 'Дрова из ольхи') {
           sectionOrderImg.src = 'images/drova-3.jpg';
+        } else if (options[_i].innerHTML === 'Смесь') {
+          sectionOrderImg.src = '';
+          formOrder.getElementsByTagName('p')[0].getElementsByTagName('span')[1].style.visibility = 'hidden';
+          price.innerHTML = 'договорная';
         }
       }
     }
@@ -124,7 +140,7 @@
       }
     }
   }
-})();
+}
 "use strict";
 
 (function () {
@@ -186,3 +202,33 @@
     request.send();
   } catch (e) {}
 })(window, document);
+"use strict";
+
+var anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
+    animationTime = 300,
+    framesCount = 20;
+anchors.forEach(function (item) {
+  // каждому якорю присваиваем обработчик события
+  item.addEventListener('click', function (e) {
+    // убираем стандартное поведение
+    e.preventDefault(); // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+
+    var coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top; // запускаем интервал, в котором
+
+    var scroller = setInterval(function () {
+      // считаем на сколько скроллить за 1 такт
+      var scrollBy = coordY / framesCount; // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+      // и дно страницы не достигнуто
+
+      if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+        // то скроллим на к-во пикселей, которое соответствует одному такту
+        window.scrollBy(0, scrollBy);
+      } else {
+        // иначе добираемся до элемента и выходим из интервала
+        window.scrollTo(0, coordY);
+        clearInterval(scroller);
+      } // время интервала равняется частному от времени анимации и к-ва кадров
+
+    }, animationTime / framesCount);
+  });
+});
